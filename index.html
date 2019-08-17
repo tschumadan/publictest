@@ -1,12 +1,35 @@
 
 <!doctype html>
 
-<head>
+<html>
+    <head>
+        <title>This is a test page</title>
+        <meta name="description" content="this is my programming testpage">
+        <link rel="stylesheet" type=text/css href="style.css">
+        <script type=text/javascript src="myscript.js"> // script </script>
+    </head>
 
+        <body>
+        testpage
 
-</head>
+        <!-- Test Auswahlfenster -->
+        <p id="value1">Auswahlfenster</p><br>
+        <select name="auswahl" multiple>
+            <option value="Auswahl1">1</option>
+            <option value="Auswahl2">2</option>
+            <option value="Auswahl3">3</option>
+            <option value="Auswahl4">4</option>
+        </select>    
 
-<body>
-test
+        <form>
+            <button type="button" onclick="document.getElementById('value1').innerHTML = Date();">Update</button>
+            <button type="button" onclick="">Redirect</button>
+        </form>
+
+        <!-- JS is best escecuted at the end of the body tag, as all form are loaded -->
+        <script>
+            setTimeout("location.href='localhost/publictest'",3000);
+        </script>
     
-</body>
+    </body>
+</html>
