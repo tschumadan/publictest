@@ -3,33 +3,71 @@
 
 <html>
     <head>
+        <meta charset="utf-8">
         <title>This is a test page</title>
         <meta name="description" content="this is my programming testpage">
+        <meta name="keywords" contetnt="html5,learn,coding,udemy">
+        <meta name="author" content="github.com/tschumadan">
+
         <link rel="stylesheet" type=text/css href="style.css">
-        <script type=text/javascript src="myscript.js"> // script </script>
     </head>
 
         <body>
-        testpage
+            <!-- div span for header - best practice -->
+            <header>
+                <h1 id="site-title">This is the header of my test page</h1>
 
-        <!-- Test Auswahlfenster -->
-        <p id="value1">Auswahlfenster</p><br>
-        <select name="auswahl" multiple>
-            <option value="Auswahl1">1</option>
-            <option value="Auswahl2">2</option>
-            <option value="Auswahl3">3</option>
-            <option value="Auswahl4">4</option>
-        </select>    
+                <!-- drop down menu -->
+                <ul class="option1-menu">
+                    
+                    <li class="site-menu-trigger" data-trigger="dropdown"><a href="#">Option1</a>
+                        
+                        <ul class="option1-submenu submenu">
+                            <li><a href="#">Unter1</a></li>
+                            <li><a href="#">Unter2</a></li>
+                            <li><a href="#">Unter3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </header> 
+            
+            <main>
+                <!-- div span for structuring the site -->
+                <section>
+                    <p id="value1">Datum:</p>
+                    <p id="text">Test</p>
+                </section>                
 
-        <form>
-            <button type="button" onclick="document.getElementById('value1').innerHTML = Date();">Update</button>
-            <button type="button" onclick="">Redirect</button>
-        </form>
+                <!-- Form which runs a php script when executed-->
+                <!-- <form method="GET" action="createXML.php"> -->
+                <form method="GET">
+                    <input name="address1" placeholder="adress" class="input" /></br>
+                    <textarea class="mytextarea" placeholder="your message"></textarea></br>
+                    <!-- executing script inline-->
+                    <button type="button" onclick="document.getElementById('value1').innerHTML = Date();">Update Date</button>
+                    <!-- alternative: executing script in script area with a EventListener -->
+                    <button type="button" id="submitbutton">Abschicken</button>
+                </form>
 
-        <!-- JS is best escecuted at the end of the body tag, as all form are loaded -->
-        <script>
-            setTimeout("location.href='localhost/publictest'",3000);
-        </script>
-    
+                <!-- div span fpr articles -->
+                <article></article>
+ 
+            </main>
+            <!-- div span for footer -->
+            <footer>This is the footer of my test page</footer>
+
+            <!-- JS is best escecuted at the end of the body tag, as all form are loaded -->
+            <noscript>
+                <div class="noscript">
+                    Please enable JavaScript or visit the <a href="/static/">static version</a> of this site.
+                </div>
+            </noscript>
+            <!--load jQuery-->
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script type=text/javascript src="jQueryFile.js"> // load local script file </script>
+            <script>
+                    //setTimeout("location.href='localhost/publictest'",3000);
+                </script>
+
     </body>
 </html>
